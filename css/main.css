@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+*::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
  background-color: #999999;
 }
@@ -34,9 +38,11 @@ ul {
     width: 5px; 
     height: 100%; 
     position: absolute;
-    left: 50%; 
-    
+    left: 50%;   
 }
+
+/* created a psudeo element to help create vertical line */
+
 
 .timeline-event:nth-child(even) {
     float: right;
@@ -45,7 +51,28 @@ ul {
 .timeline-event:nth-child(odd) {
     clear: right; 
 }
+/*used clear property to ensure the element has float property sit after the elements  */
 
-
+.timeline-event {
+    display: flex;
+    flex-direction: column;
+}
  
 
+.timeline-event:nth-child(even) {
+    margin-left: auto;
+}
+
+@media (max-width: 1120px) {
+    .timeline-event:nth-child(even) {
+        margin-left: initial;
+    }
+}
+
+.container::before {
+    left: 2%;
+}
+
+.button :hover {
+    background-color: red;
+}
