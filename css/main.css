@@ -1,23 +1,51 @@
-.column {
-  flex: 33.33%;
-  height: 200px;
-  padding: 10px;
-  margin: 5px;
-  background-color: #cccccc;
-  text-align: center;
-  box-sizing: border-box; 
-  position: relative;
-}
-.container {
-   display: grid;
-   grid-template-columns: 100px 150px 200px;
-  text-align: center;
-}	
 
-@media (hover: hover) { /* when supported */
-  a:hover {
-    color: white;
-    background: black;
-  }
+* {
+    box-sizing: border-box;
 }
+
+body {
+ background-color: #999999;
+}
+  
+ul {
+    padding: 0px;
+    list-style-type: none;
+}
+
+.timeline-article {
+    width: 600px;
+    background-color: #F2F2F2;
+    
+}
+/
+/ .vertical-line {
+    border-left: 10px solid #15507D;
+    position: relative;
+    left: 50%; 
+    } 
+
+.vertical-line {
+    position: relative; 
+}
+
+.vertical-line::before {
+    content: ''; 
+    background-color: #15507D;
+    width: 5px; 
+    height: 100%; 
+    position: absolute;
+    left: 50%; 
+    
+}
+
+.timeline-event:nth-child(even) {
+    float: right;
+}
+
+.timeline-event:nth-child(odd) {
+    clear: right; 
+}
+
+
+ 
 
