@@ -1,4 +1,4 @@
-
+/* Applied to the entire document  */
 * {
     box-sizing: border-box;
 }
@@ -7,72 +7,112 @@
     box-sizing: inherit;
 }
 
+/* Applies background to body element */
 body {
  background-color: #999999;
 }
-  
+
+
+/* Removes default styling of UL element   */
 ul {
     padding: 0px;
     list-style-type: none;
 }
 
-.timeline-article {
-    width: 600px;
-    background-color: #F2F2F2;
-    
-}
-/
-/ .vertical-line {
-    border-left: 10px solid #15507D;
-    position: relative;
-    left: 50%; 
-    } 
-
-.vertical-line {
-    position: relative; 
-}
-
-.vertical-line::before {
-    content: ''; 
-    background-color: #15507D;
-    width: 5px; 
-    height: 100%; 
+/* Creates vertial timeline out of a div */
+.vertical-timeline{
+    background-color: #15507D; 
+    width: 5px;
+    min-height: 150%;
     position: absolute;
-    left: 50%;   
+    left: 50%;
 }
 
-/* created a psudeo element to help create vertical line */
-
-
-.timeline-event:nth-child(even) {
-    float: right;
+/* Creates div that will contain icon */
+.icon {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: #0B4E79;
+    position: absolute;
 }
 
-.timeline-event:nth-child(odd) {
-    clear: right; 
+/* Applies positioning to each individual icon container  */
+.first {
+    transform: translateX(-50%);
+    top: 35px; 
 }
-/*used clear property to ensure the element has float property sit after the elements  */
+.second {
+    transform: translateX(-50%);
+    top: 320px; 
+}
+.third {
+    transform: translateX(-50%);
+    top: 600px; 
+}
+
+.main {
+    position: relative;     
+}
 
 .timeline-event {
     display: flex;
     flex-direction: column;
+     
+}
+
+.timeline-article {
+    width: 550px;
+    background-color: #F2F2F2; 
+    padding-left: 20px; 
+    padding-bottom: 20px;   
+    border-radius: 1.5%;
+    position: relative;
+    margin: 20px;
+}
+
+/* Floats the second container to the right side of page */
+.timeline-event:nth-child(even) {
+    float: right;
+}
+
+/*used clear property to ensure the element has float property sit after the elements  */
+.timeline-event:nth-child(odd) {
+    clear: right; 
 }
  
+button {
+    height: 36px;
+    width: 79px;
+    background-color: #0B4E79;
+    color: #ffff;
+    border-radius: 10%;
 
-.timeline-event:nth-child(even) {
-    margin-left: auto;
+}
+time {
+    background-color: #FB2545;
+    width: 146px;
+    height: 57px;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 20px;    
+    text-align: center;
+    position: absolute;
+    right: 0;
 }
 
-@media (max-width: 1120px) {
-    .timeline-event:nth-child(even) {
-        margin-left: initial;
-    }
+/* Contains text time element  */
+span {
+    position: absolute;
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 100%;  
 }
 
-.container::before {
-    left: 2%;
-}
 
-.button :hover {
-    background-color: red;
-}
+/* Things to do:
+1. Add hover 
+2. add scroll line to last div
+3. change icon colors, position
+4. create triangle effect, and position
+5. add image, title, & time elements, likely a second div on top of article */
