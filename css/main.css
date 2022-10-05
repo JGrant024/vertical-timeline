@@ -32,9 +32,12 @@ ul {
 .icon {
     width: 40px; 
     height: 40px; 
-    border-radius: 50%; 
+    border-radius: 70%; 
     background-color: #0B4E79;
-    position: absolute;
+    position: absolute; 
+    color: #F2F2F2;
+    text-align: center;
+    padding-top: 5px;
 }
 
 /* Applies positioning to each individual icon container  */
@@ -70,6 +73,13 @@ ul {
     position: relative;
     margin: 20px;
 }
+
+.cat-img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
 
 /* Floats the second container to the right side of page */
 .timeline-event:nth-child(even) {
@@ -109,11 +119,17 @@ span {
     width: 100%;  
 }
 
+body{
+ @media (min-width: 768px)
+}
+
+
+
+
 
 /* Things to do:
 1. Add hover 
 2. add scroll line to last div
-3. change icon colors, position
 4. create triangle effect, and position
 5. add image, title, & time elements, likely a second div on top of article
 6. add media query  */
